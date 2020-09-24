@@ -1,0 +1,24 @@
+{
+  "name": "codeklavier-ar-master",
+  "version": "1.0.0",
+  "description": "Master server for CodeklaviAR",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cappelnord/codeklavier-ar-master.git"
+  },
+  "author": "Patrick Borgeat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cappelnord/codeklavier-ar-master/issues"
+  },
+  "homepage": "https://github.com/cappelnord/codeklavier-ar-master#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.17.1"
+  }
+}

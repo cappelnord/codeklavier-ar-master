@@ -1,0 +1,20 @@
+{
+	"public": {
+		"status":"offline",
+		"description":"Public performance server",
+		"secret":"abc",
+		"url": ""
+	},
+	"nl": {
+		"status":"offline",
+		"description":"NL rehearsal server",
+		"sectret":"abc",
+		"url": ""
+	},
+	"patrick": {
+		"status":"offline",
+		"description":"Patrick development server",
+		"secret":"abc",
+		"url": ""
+	}
+}
