@@ -8,7 +8,7 @@
 	"nl": {
 		"status":"offline",
 		"description":"NL rehearsal server",
-		"sectret":"abc",
+		"secret":"abc",
 		"url": ""
 	},
 	"patrick": {

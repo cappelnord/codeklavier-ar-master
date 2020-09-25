@@ -75,9 +75,11 @@ app.get('/master/set', async (req, res) => {
 		let payload = req.query["payload"];
 		let checkHash = req.query["hash"];
 
-		payload = new Buffer(payload, 'base64').toString('ascii');
+		payload = new Buffer.from(payload, 'base64').toString('ascii');
 
-		if(hash(channel["secret"], payload) != checkHash) {
+		let myHash = hash(channel["secret"], payload)
+
+		if(myHash != checkHash) {
 			res.status(403);
 			res.send('Could not update channel: Hash mismatch!');
 			return;
