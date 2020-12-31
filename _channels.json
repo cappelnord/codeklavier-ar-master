@@ -1,20 +1,38 @@
 {
 	"public": {
 		"status":"offline",
-		"description":"Public performance server",
-		"secret":"abc",
-		"url": ""
+		"name": "ARquatic Live",
+		"description":"Channel for ARquatic live performances.",
+		"eventISODate": "",
+		"eventURL": "",
+		"websocketBaseURL": "",
+		"secret": "abc"
+	},
+	"public": {
+		"status":"offline",
+		"name": "ARquatic Demo",
+		"description": "Try out ARquatic with this endless loop.",
+		"eventISODate": "",
+		"eventURL": "",
+		"websocketBaseURL": "",
+		"secret": "abc"
 	},
 	"nl": {
 		"status":"offline",
-		"description":"NL rehearsal server",
-		"secret":"abc",
-		"url": ""
+		"name": "NL Rehearsal Channel",
+		"description": "...",
+		"eventISODate": "",
+		"eventURL": "",
+		"websocketBaseURL": "",
+		"secret": "abc"
 	},
 	"patrick": {
 		"status":"offline",
-		"description":"Patrick development server",
-		"secret":"abc",
-		"url": ""
+		"name":"Patrick's Development Channel",
+		"description": "...",
+		"eventISODate": "",
+		"eventURL": "",
+		"websocketBaseURL": "",
+		"secret": "abc"
 	}
 }

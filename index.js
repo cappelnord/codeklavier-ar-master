@@ -38,6 +38,12 @@ app.get('/master/channel', (req, res) => {
 		let id = req.query["id"];
 		let channel = channels[id];
 
+		if(id == undefined) {
+			res.status(404);
+			res.send("No channel specified!");
+			return;
+		}
+
 		if(channel === undefined) {
 			res.status(404);
 			res.send(`Channel '${id}'' not found!`)
@@ -86,12 +92,15 @@ app.get('/master/set', async (req, res) => {
 		}
 
 		let object = JSON.parse(payload)
-		if(object["url"] !== undefined) {
-			channel["url"] = object["url"]
+
+		let keys = ["status", "name", "description", "eventISODate", "eventURL", "websocketBaseURL"];
+
+		for(key of keys) {
+			if(object[key] !== undefined) {
+				channel[key] = object[key];
+			}
 		}
-		if(object["status"] !== undefined) {
-			channel["status"] = object["status"]
-		}
+
 		res.status(200);
 		res.send("OK");
 
