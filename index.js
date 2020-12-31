@@ -53,8 +53,11 @@ app.get('/master/channel', (req, res) => {
 		res.status(200);
 		res.send(JSON.stringify({
 			"status": channel["status"],
+			"name": channel["name"],
 			"description": channel["description"],
-			"url": channel["url"]
+			"websocketBaseURL": channel["websocketBaseURL"],
+			"eventURL": channel["eventURL"],
+			"eventISODate": channel["eventISODate"]
 		}));
 		
  	} catch (err) {

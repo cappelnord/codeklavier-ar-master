@@ -8,7 +8,7 @@
 		"websocketBaseURL": "",
 		"secret": "abc"
 	},
-	"public": {
+	"demo": {
 		"status":"offline",
 		"name": "ARquatic Demo",
 		"description": "Try out ARquatic with this endless loop.",
