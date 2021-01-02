@@ -100,7 +100,7 @@ app.get('/master/channel', (req, res) => {
 
 		res.status(200);
 		res.setHeader("Content-Type", "application/json");
-		res.send(JSON.stringify(channelObject[id]));
+		res.send(JSON.stringify(channelObject(id));
 		
  	} catch (err) {
  		console.log(err);
