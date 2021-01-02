@@ -57,18 +57,17 @@ app.get('/master/app', (req, res) => {
 	count = count + 1
 
 	try {
-		let channels = {}
+		let channelList = []
 		
 		for(channelID of appInfo.channelList) {
-			channels[channelID] = channelObject(channelID);
+			channelList.push([channelID, channelObject(channelID)]);
 		}
 
 		res.status(200);
 		res.setHeader("Content-Type", "application/json");
 		res.send(JSON.stringify({
 			"protocol": appInfo["protocol"],
-			"channelList": appInfo["channelList"],
-			"channels": channels
+			"channelList": channelList
 		}));
 
 	} catch (err) {
