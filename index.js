@@ -5,10 +5,12 @@ const crypto = require('crypto');
 const app = express()
 
 const port = 10333
-const channelsFile = "channels.json"
 
+const channelsFile = "channels.json";
 
 let channels = JSON.parse(fs.readFileSync(channelsFile));
+let appInfo = JSON.parse(fs.readFileSync("app.json"));
+
 let count = 0;
 
 function writeChannels() {
@@ -27,9 +29,55 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function channelObject(id) {
+	let channel = channels[id];
+
+	if(channel === undefined) {
+		return {}
+	}
+
+	return {
+			"status": channel["status"],
+			"name": channel["name"],
+			"description": channel["description"],
+			"websocketBaseURL": channel["websocketBaseURL"],
+			"eventURL": channel["eventURL"],
+			"eventISODate": channel["eventISODate"]
+	}
+}
+
 app.get('/master/', (req, res) => {
-  res.send(`Running. Served: ${count}`)
+	count = count + 1 
+
+	res.status(200);
+	res.send(`Running. Served: ${count}`)
 })
+
+app.get('/master/app', (req, res) => {
+	count = count + 1
+
+	try {
+		let channels = {}
+		
+		for(channelID of appInfo.channelList) {
+			channels[channelID] = channelObject(channelID);
+		}
+
+		res.status(200);
+		res.setHeader("Content-Type", "application/json");
+		res.send(JSON.stringify({
+			"protocol": appInfo["protocol"],
+			"channelList": appInfo["channelList"],
+			"channels": channels
+		}));
+
+	} catch (err) {
+ 		console.log(err);
+ 		res.status(500)
+		res.send("Error!");
+ 		return;
+ 	}
+});
 
 app.get('/master/channel', (req, res) => {
 	count = count + 1 
@@ -51,14 +99,8 @@ app.get('/master/channel', (req, res) => {
 		}
 
 		res.status(200);
-		res.send(JSON.stringify({
-			"status": channel["status"],
-			"name": channel["name"],
-			"description": channel["description"],
-			"websocketBaseURL": channel["websocketBaseURL"],
-			"eventURL": channel["eventURL"],
-			"eventISODate": channel["eventISODate"]
-		}));
+		res.setHeader("Content-Type", "application/json");
+		res.send(JSON.stringify(channelObject[id]));
 		
  	} catch (err) {
  		console.log(err);
