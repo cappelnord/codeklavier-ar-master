@@ -53,10 +53,18 @@ app.get('/master/', (req, res) => {
 	res.send(`Running. Served: ${count}`)
 })
 
-app.get('/master/app', (req, res) => {
+app.get('/master/app', async (req, res) => {
 	count = count + 1
 
 	try {
+
+		// probably best to remove in production
+		
+		let delay = req.query["delay"];
+		if(delay !== undefined) {
+			await sleep(parseInt(delay));
+		}
+
 		let channelList = []
 		
 		for(channelID of appInfo.channelList) {
