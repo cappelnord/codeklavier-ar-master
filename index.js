@@ -68,7 +68,7 @@ app.get('/master/app', async (req, res) => {
 		let channelList = []
 		
 		for(channelID of appInfo.channelList) {
-			channelList.push([channelID, channelObject(channelID)]);
+			channelList.push({"id": channelID, "info": channelObject(channelID)});
 		}
 
 		res.status(200);
