@@ -151,6 +151,10 @@ app.get('/master/set', async (req, res) => {
 
 		let object = JSON.parse(payload)
 
+		if(appInfo.wsOverride[id] !== undefined) {
+			object["websocketBaseURL"] = appInfo.wsOverride[id];
+		}
+
 		let keys = ["status", "name", "description", "eventISODate", "eventURL", "websocketBaseURL"];
 
 		for(key of keys) {
