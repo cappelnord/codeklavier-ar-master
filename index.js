@@ -61,6 +61,8 @@ app.get('/master/app', async (req, res) => {
 		// probably best to remove in production
 		
 		let delay = req.query["delay"];
+		let additionalChannel = req.query["additionalChannel"];
+
 		if(delay !== undefined) {
 			await sleep(parseInt(delay));
 		}
@@ -69,6 +71,10 @@ app.get('/master/app', async (req, res) => {
 		
 		for(channelID of appInfo.channelList) {
 			channelList.push({"id": channelID, "info": channelObject(channelID)});
+		}
+
+		if(additionalChannel != undefined && additionalChannel != "" && channels[additionalChannel] !== undefined) {
+			channelList.push({"id": additionalChannel, "info": channelObject(additionalChannel)});
 		}
 
 		res.status(200);
