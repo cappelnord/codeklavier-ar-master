@@ -7,7 +7,9 @@
 		"eventURL": "",
 		"websocketBaseURL": "",
 		"secret": "abc",
-		"visible": true
+		"visible": true,
+		"baseScale": 1.0,
+		"baseDistance": 1.0
 	},
 	"demo": {
 		"status":"offline",
@@ -17,7 +19,9 @@
 		"eventURL": "",
 		"websocketBaseURL": "",
 		"secret": "abc",
-		"visible": true
+		"visible": true,
+		"baseScale": 1.0,
+		"baseDistance": 1.0
 	},
 	"nl": {
 		"status":"offline",
@@ -27,7 +31,9 @@
 		"eventURL": "",
 		"websocketBaseURL": "",
 		"secret": "abc",
-		"visible": true
+		"visible": true,
+		"baseScale": 1.0,
+		"baseDistance": 1.0
 	},
 	"patrick": {
 		"status":"offline",
@@ -37,6 +43,8 @@
 		"eventURL": "",
 		"websocketBaseURL": "",
 		"secret": "abc",
-		"visible": false
+		"visible": false,
+		"baseScale": 1.0,
+		"baseDistance": 1.0
 	}
 }
