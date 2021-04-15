@@ -42,7 +42,8 @@ function channelObject(id) {
 			"description": channel["description"],
 			"websocketBaseURL": channel["websocketBaseURL"],
 			"eventURL": channel["eventURL"],
-			"eventISODate": channel["eventISODate"]
+			"eventISODate": channel["eventISODate"],
+			"visible": channel["visible"]
 	}
 }
 
@@ -155,7 +156,7 @@ app.get('/master/set', async (req, res) => {
 			object["websocketBaseURL"] = appInfo.wsOverride[id];
 		}
 
-		let keys = ["status", "name", "description", "eventISODate", "eventURL", "websocketBaseURL"];
+		let keys = ["status", "name", "description", "eventISODate", "eventURL", "websocketBaseURL", "visible"];
 
 		for(key of keys) {
 			if(object[key] !== undefined) {

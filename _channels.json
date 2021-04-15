@@ -6,7 +6,8 @@
 		"eventISODate": "",
 		"eventURL": "",
 		"websocketBaseURL": "",
-		"secret": "abc"
+		"secret": "abc",
+		"visible": true
 	},
 	"demo": {
 		"status":"offline",
@@ -15,7 +16,8 @@
 		"eventISODate": "",
 		"eventURL": "",
 		"websocketBaseURL": "",
-		"secret": "abc"
+		"secret": "abc",
+		"visible": true
 	},
 	"nl": {
 		"status":"offline",
@@ -24,7 +26,8 @@
 		"eventISODate": "",
 		"eventURL": "",
 		"websocketBaseURL": "",
-		"secret": "abc"
+		"secret": "abc",
+		"visible": true
 	},
 	"patrick": {
 		"status":"offline",
@@ -33,6 +36,7 @@
 		"eventISODate": "",
 		"eventURL": "",
 		"websocketBaseURL": "",
-		"secret": "abc"
+		"secret": "abc",
+		"visible": false
 	}
 }
