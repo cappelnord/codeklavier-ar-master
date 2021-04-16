@@ -1,8 +1,9 @@
 {
 	"protocol": 1,
-	"channelList": ["public", "demo"],
+	"channelList": ["public", "stream", "demo"],
 	"wsOverride": {
 		"public": "wss://ar.codeklavier.space/socket/public/",
+		"stream": "wss://ar.codeklavier.space/socket/stream/", 
 		"demo": "wss://ar.codeklavier.space/socket/demo/"
 	}
 }
