@@ -8,6 +8,7 @@
 		"websocketBaseURL": "",
 		"secret": "abc",
 		"visible": true,
+		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
 		"baseDistance": 1.0
 	},
@@ -20,6 +21,7 @@
 		"websocketBaseURL": "",
 		"secret": "abc",
 		"visible": true,
+		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
 		"baseDistance": 1.0
 	},
@@ -32,6 +34,7 @@
 		"websocketBaseURL": "",
 		"secret": "abc",
 		"visible": true,
+		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
 		"baseDistance": 1.0
 	},
@@ -44,6 +47,7 @@
 		"websocketBaseURL": "",
 		"secret": "abc",
 		"visible": true,
+		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
 		"baseDistance": 1.0
 	},
@@ -56,6 +60,7 @@
 		"websocketBaseURL": "",
 		"secret": "abc",
 		"visible": false,
+		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
 		"baseDistance": 1.0
 	}
