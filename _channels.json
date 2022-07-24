@@ -10,7 +10,8 @@
 		"visible": true,
 		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
-		"baseDistance": 1.0
+		"baseDistance": 1.0,
+		"nightMode": false
 	},
 	"stream": {
 		"status":"offline",
@@ -23,7 +24,8 @@
 		"visible": true,
 		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
-		"baseDistance": 1.0
+		"baseDistance": 1.0,
+		"nightMode": false
 	},
 	"demo": {
 		"status":"offline",
@@ -36,7 +38,8 @@
 		"visible": true,
 		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
-		"baseDistance": 1.0
+		"baseDistance": 1.0,
+		"nightMode": false
 	},
 	"nl": {
 		"status":"offline",
@@ -49,7 +52,8 @@
 		"visible": true,
 		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
-		"baseDistance": 1.0
+		"baseDistance": 1.0,
+		"nightMode": false
 	},
 	"patrick": {
 		"status":"offline",
@@ -62,6 +66,7 @@
 		"visible": false,
 		"brightnessMultiplier": 1.0,
 		"baseScale": 1.0,
-		"baseDistance": 1.0
+		"baseDistance": 1.0,
+		"nightMode": false
 	}
 }

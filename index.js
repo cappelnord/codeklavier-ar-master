@@ -46,7 +46,8 @@ function channelObject(id) {
 			"visible": channel["visible"],
 			"brightnessMultiplier": channel["brightnessMultiplier"],
 			"baseScale": channel["baseScale"],
-			"baseDistance": channel["baseDistance"]
+			"baseDistance": channel["baseDistance"],
+			"nightMode": channel["nightMode"]
 	}
 }
 
@@ -64,12 +65,14 @@ app.get('/master/app', async (req, res) => {
 
 		// probably best to remove in production
 		
-		let delay = req.query["delay"];
+		// let delay = req.query["delay"];
 		let additionalChannel = req.query["additionalChannel"];
 
+		/*
 		if(delay !== undefined) {
 			await sleep(parseInt(delay));
 		}
+		*/
 
 		let channelList = []
 		
@@ -159,7 +162,7 @@ app.get('/master/set', async (req, res) => {
 			object["websocketBaseURL"] = appInfo.wsOverride[id];
 		}
 
-		let keys = ["status", "name", "description", "eventISODate", "eventURL", "websocketBaseURL", "visible", "brightnessMultiplier", "baseScale", "baseDistance"];
+		let keys = ["status", "name", "description", "eventISODate", "eventURL", "websocketBaseURL", "visible", "brightnessMultiplier", "baseScale", "baseDistance", "nightMode"];
 
 		for(key of keys) {
 			if(object[key] !== undefined) {
