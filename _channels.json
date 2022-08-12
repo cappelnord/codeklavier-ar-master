@@ -2,7 +2,9 @@
 	"public": {
 		"status":"offline",
 		"name": "ARquatic Live",
-		"description":"Channel for ARquatic live performances.",
+		"name_nl": "",
+		"description": "Channel for ARquatic live performances.",
+		"description_nl": "",
 		"eventISODate": "",
 		"eventURL": "",
 		"websocketBaseURL": "",
@@ -16,6 +18,8 @@
 	"stream": {
 		"status":"offline",
 		"name": "Livestream",
+		"name_nl": "",
+		"description_nl": "",
 		"description":"Channel for ARquatic live streams.",
 		"eventISODate": "",
 		"eventURL": "",
@@ -31,6 +35,8 @@
 		"status":"offline",
 		"name": "ARquatic Demo",
 		"description": "Try out ARquatic with this endless loop.",
+		"name_nl": "",
+		"description_nl": "",
 		"eventISODate": "",
 		"eventURL": "",
 		"websocketBaseURL": "",
@@ -44,6 +50,8 @@
 	"nl": {
 		"status":"offline",
 		"name": "NL Rehearsal Channel",
+		"name_nl": "",
+		"description_nl": "",
 		"description": "...",
 		"eventISODate": "",
 		"eventURL": "",
@@ -58,6 +66,8 @@
 	"patrick": {
 		"status":"offline",
 		"name":"Patrick's Development Channel",
+		"name_nl": "",
+		"description_nl": "",
 		"description": "...",
 		"eventISODate": "",
 		"eventURL": "",
