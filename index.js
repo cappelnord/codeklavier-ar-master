@@ -20,7 +20,7 @@ let appInfo = JSON.parse(fs.readFileSync("app.json"));
 let count = 0;
 
 function writeChannels() {
-	fs.writeFileSync(channelsFile, JSON.stringify(channels));
+	fs.writeFileSync(channelsFile, JSON.stringify(channels, null, 2));
 }
 
 function hash(secret, data) {
