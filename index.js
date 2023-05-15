@@ -11,7 +11,7 @@ const channelsFile = "channels.json";
 /*
 Update for bundled experiences: 
 - status becomes "bundled"
-- bundleID as a new data point
+- bundledID as a new data point
 */
 
 let channels = JSON.parse(fs.readFileSync(channelsFile));
@@ -49,7 +49,7 @@ function channelObject(id) {
 			"name_nl": channel["name_nl"],
 			"description_nl": channel["description_nl"],
 			"websocketBaseURL": channel["websocketBaseURL"],
-			"bundleID": channel["bundleID"],
+			"bundledID": channel["bundledID"],
 			"eventURL": channel["eventURL"],
 			"eventISODate": channel["eventISODate"],
 			"visible": channel["visible"],
@@ -171,7 +171,7 @@ app.get('/master/set', async (req, res) => {
 			object["websocketBaseURL"] = appInfo.wsOverride[id];
 		}
 
-		let keys = ["status", "name", "description", "name_nl", "description_nl", "eventISODate", "eventURL", "websocketBaseURL", "bundleID", "visible", "brightnessMultiplier", "baseScale", "baseDistance", "nightMode"];
+		let keys = ["status", "name", "description", "name_nl", "description_nl", "eventISODate", "eventURL", "websocketBaseURL", "bundledID", "visible", "brightnessMultiplier", "baseScale", "baseDistance", "nightMode"];
 
 		for(key of keys) {
 			if(object[key] !== undefined) {
