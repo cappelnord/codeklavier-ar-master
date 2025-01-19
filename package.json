@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cappelnord/codeklavier-ar-master#readme",
   "dependencies": {
     "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
     "express": "^4.17.1"
   }
 }

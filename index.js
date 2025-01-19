@@ -1,12 +1,15 @@
+require('dotenv').config()
+
 const express = require('express')
 const fs = require('fs')
 const crypto = require('crypto');
 
 const app = express()
 
-const port = 10333
+const port = 3000
 
-const channelsFile = "channels.json";
+const channelsPath = "data/channels.json";
+const appInfoPath = "data/app.json";
 
 /*
 Update for bundled experiences: 
@@ -14,13 +17,14 @@ Update for bundled experiences:
 - bundledID as a new data point
 */
 
-let channels = JSON.parse(fs.readFileSync(channelsFile));
-let appInfo = JSON.parse(fs.readFileSync("app.json"));
+
+let channels = JSON.parse(fs.readFileSync(channelsPath));
+let appInfo = JSON.parse(fs.readFileSync(appInfoPath));
 
 let count = 0;
 
 function writeChannels() {
-	fs.writeFileSync(channelsFile, JSON.stringify(channels, null, 2));
+	fs.writeFileSync(channelsPath, JSON.stringify(channels, null, 2));
 }
 
 function hash(secret, data) {
