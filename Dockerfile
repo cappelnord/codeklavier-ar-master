@@ -15,5 +15,7 @@ COPY . .
 # Expose the port that the app listens on
 EXPOSE 3000
 
+VOLUME /data
+
 # Define the command to run the app
-CMD ["node", "server.js"]
+CMD ["node", "index.js"]
