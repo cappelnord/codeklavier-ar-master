@@ -1,5 +1,9 @@
 FROM node:18-alpine
 
+# copy initial data
+WORKDIR /data
+COPY data/ /data/
+
 # Set the working directory
 WORKDIR /usr/src/app
 
@@ -16,6 +20,8 @@ COPY . .
 EXPOSE 3000
 
 VOLUME /data
+
+ENV DATA_PATH="/data/"
 
 # Define the command to run the app
 CMD ["node", "index.js"]

@@ -8,14 +8,25 @@ const app = express()
 
 const port = 3000
 
-const channelsPath = "data/channels.json";
-const appInfoPath = "data/app.json";
+let folder = "data/";
+if(process.env["DATA_PATH"]) {
+	folder = process.env["DATA_PATH"];
+}
+
+const channelsPath = folder + "channels.json";
+const appInfoPath = folder + "app.json";
+const firstRunPath = folder + "iwasherefirst.txt";
 
 /*
 Update for bundled experiences: 
 - status becomes "bundled"
 - bundledID as a new data point
 */
+
+if(!fs.existsSync(firstRunPath)) {
+	console.log("Marked data folder as visited.");
+	fs.writeFileSync(firstRunPath, "me");
+}
 
 
 let channels = JSON.parse(fs.readFileSync(channelsPath));
