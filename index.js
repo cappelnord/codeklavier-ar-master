@@ -8,14 +8,17 @@ const app = express()
 
 const port = 3000
 
-let folder = "data/";
+const localDataFolder = "data/";
+const channelsFile = "channels.json";
+const appInfoFile = "app.json";
+
+let folder = localDataFolder;
 if(process.env["DATA_PATH"]) {
 	folder = process.env["DATA_PATH"];
 }
 
-const channelsPath = folder + "channels.json";
-const appInfoPath = folder + "app.json";
-const firstRunPath = folder + "iwasherefirst.txt";
+const channelsPath = folder + channelsFile;
+const appInfoPath = folder + appInfoFile;
 
 /*
 Update for bundled experiences: 
@@ -23,9 +26,14 @@ Update for bundled experiences:
 - bundledID as a new data point
 */
 
-if(!fs.existsSync(firstRunPath)) {
-	console.log("Marked data folder as visited.");
-	fs.writeFileSync(firstRunPath, "me");
+// copy local data files in case they don't exist to cater for docker bind mounts
+
+if(!fs.existsSync(channelsPath)) {
+	fs.cpSync(localDataFolder + channelsFile, channelsPath);
+}
+
+if(!fs.existsSync(appInfoPath)) {
+	fs.cpSync(localDataFolder + appInfoFile, appInfoPath);
 }
 
 
@@ -74,6 +82,12 @@ function channelObject(id) {
 			"nightMode": channel["nightMode"]
 	}
 }
+
+app.get('/', (req, res) => {
+	const webpage = process.env["WEBPAGE"] || "https://codeklavier.space/arquatic";
+	res.redirect(webpage);
+	return;
+})
 
 app.get('/master/', (req, res) => {
 	count = count + 1 

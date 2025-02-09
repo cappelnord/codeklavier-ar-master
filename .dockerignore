@@ -3,4 +3,3 @@ npm-debug.log
 Dockerfile
 .dockerignore
 docker-images/*.tar
-data/iwasherefirst.txt
