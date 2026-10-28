@@ -6,10 +6,10 @@ TAG="${1:-latest}"
 
 echo "Building ${IMAGE}:${TAG} for linux/amd64..."
 
-docker buildx build 
---platform linux/amd64 
--t "${IMAGE}:${TAG}" 
---push 
-.
+docker buildx build \
+  --platform linux/amd64 \
+  -t "${IMAGE}:${TAG}" \
+  --push \
+  .
 
 echo "Successfully pushed ${IMAGE}:${TAG} to Docker Hub."
